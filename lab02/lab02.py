@@ -223,8 +223,8 @@ if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         text = f.read()
 
-    KEY = 'SDFTasddghjkl46778647dfghjk'
+    KEY = 'kjfdaslSFJK123fdaskl12ejrkj'
     enc = stb.encrypt(str2bin(text), str2bin(KEY))
-    print(f'\nENCRYPTED: { bin2str(enc)}')
+    print(f'\nEncrtypted: { bin2str(enc)}')
     dec = stb.decrypt(enc, str2bin(KEY))
-    print(f'DECRYPTED: {bin2str(dec)}\n')
+    print(f'Decrypted: {bin2str(dec)}\n')

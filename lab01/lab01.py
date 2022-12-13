@@ -8,8 +8,6 @@ def string_to_bin_list(st):
     return [int(i) for i in ''.join('{0:08b}'.format(ord(x), 'b') for x in st)]
 
 
-
-
 def bin_list_to_string(input_list):
     res = ''
 
@@ -38,17 +36,15 @@ def des3(data, KEY1, KEY2):
     print(f'Encrypted: {bin_list_to_string(enc)}')
     print(f'Decrypted: {bin_list_to_string(dec)}')
 
-   
-
 
 if __name__ == '__main__':
     with open('text.txt', 'r') as f:
         data = f.read()
 
 
-    KEY1 = 'WEQRTY'
-    KEY2 = 'QWER24'
-    KEY3 = 'AFDFGHJKL123456UYTREWQ235479'
+    KEY1 = 'kjdsQW'
+    KEY2 = 'krwe21'
+    KEY3 = 'JIEWIKFLDKFLAJDLAJS1234FJDKA'
 
     K1 = string_to_bin_list(KEY1)
     K2 = string_to_bin_list(KEY2)
@@ -57,16 +53,19 @@ if __name__ == '__main__':
 
     enc = des.encrypt(D, K1)
     dec = des.decrypt(enc, K1)
-    print('\n')
+    print()
     print('DES (1):')
     print(f'Encrypted: {bin_list_to_string(enc)}')
     print(f'Decrypted: {bin_list_to_string(dec)}')
+    print()
 
     print('DES (2):')
     des2(D, K1, K2)
+    print()
 
     print('DES (3): ')
     des3(D, K1, K2)
+    print()
 
     print('GOST: ')
 
@@ -75,4 +74,4 @@ if __name__ == '__main__':
     print(f'Encrypted: {bin_list_to_string(enc)}')
     print(f'Decrypted: {bin_list_to_string(dec)}')
 
-    print('\n')
+    print()
